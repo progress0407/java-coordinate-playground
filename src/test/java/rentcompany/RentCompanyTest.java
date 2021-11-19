@@ -18,6 +18,30 @@ public class RentCompanyTest {
     }
 
     @Test
+    @DisplayName("주입할 연료량 : Sonata")
+    void chargeQuantitSonatay() {
+        Sonata sonata = new Sonata(150);
+        double chargeQuantity = sonata.getChargeQuantity();
+        assertThat(chargeQuantity).isEqualTo(15);
+    }
+
+    @Test
+    @DisplayName("주입할 연료량 : K5")
+    void chargeQuantityK5() {
+        K5 k5 = new K5(260);
+        double chargeQuantity = k5.getChargeQuantity();
+        assertThat(chargeQuantity).isEqualTo(20);
+    }
+
+    @Test
+    @DisplayName("주입할 연료량 : Sonata")
+    void chargeQuantitySonata() {
+        Sonata sonata = new Sonata(120);
+        double distancePerLiter = sonata.getChargeQuantity();
+        assertThat(distancePerLiter).isEqualTo(12);
+    }
+
+    @Test
     public void report() throws Exception {
         RentCompany company = RentCompany.create(); // factory method를 사용해 생성
         company.addCar(new Sonata(150));

@@ -5,6 +5,8 @@ import java.util.List;
 
 public class RentCompany {
 
+    private static final String NEWLINE = System.getProperty("line.separator");
+
     List<Car> cars;
 
     private RentCompany() {
@@ -20,6 +22,14 @@ public class RentCompany {
     }
 
     public String generateReport() {
-        return null;
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Car car : cars) {
+            stringBuilder
+                    .append(car.getName())
+                    .append(" : ")
+                    .append((int) car.getChargeQuantity())
+                    .append("리터").append(NEWLINE);
+        }
+        return stringBuilder.toString();
     }
 }
