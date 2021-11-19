@@ -1,11 +1,11 @@
 package rentcompany;
 
-public class Sonata extends Car{
+public class Avante extends Car {
 
-    private static final double distancePerLiter = 10;
+    private static final double distancePerLiter = 15;
     private final double tripDistance;
 
-    public Sonata(double tripDistance) {
+    public Avante(double tripDistance) {
         this.tripDistance = tripDistance;
     }
 

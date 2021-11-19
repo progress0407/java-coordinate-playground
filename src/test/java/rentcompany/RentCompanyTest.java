@@ -17,7 +17,7 @@ public class RentCompanyTest {
         assertThat(NEWLINE).isNotEqualTo("\r");
     }
 
-    /*    @Test
+    @Test
     public void report() throws Exception {
         RentCompany company = RentCompany.create(); // factory method를 사용해 생성
         company.addCar(new Sonata(150));
@@ -34,5 +34,5 @@ public class RentCompanyTest {
                         "Avante : 20리터" + NEWLINE +
                         "K5 : 30리터" + NEWLINE
         );
-    }*/
+    }
 }
