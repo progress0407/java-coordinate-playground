@@ -9,7 +9,7 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.offset;
 
-public class TrianglePointCalculatorTest {
+public class LinePointCalculatorTest {
 
     @Test
     @DisplayName("점을 입력 받는다")

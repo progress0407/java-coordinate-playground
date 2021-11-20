@@ -6,22 +6,17 @@ import java.util.List;
 public class Points {
     List<Point> points;
 
-    // [(10,10), (14,15)]
-    public Points(List<Point> points) {
-        this.points = points;
+    // (10,10)-(14,15)
+    public static Points create(String input) {
+        return new Points(input.split("-"));
     }
 
     // {(10,10), (14,15)}
-    public Points(String... pointArray) {
+    private Points(String... pointArray) {
         points = new ArrayList<>();
         for (String point : pointArray) {
             points.add(new Point(point));
         }
-    }
-
-    // (10,10)-(14,15)
-    public static Points create(String input) {
-        return new Points(input.split("-"));
     }
 
     public List<Point> get() {
