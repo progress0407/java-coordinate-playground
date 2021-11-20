@@ -1,6 +1,5 @@
 package coordinatecalc;
 
-import java.util.List;
 import java.util.Scanner;
 
 import static java.lang.System.out;
@@ -9,25 +8,24 @@ public class Prompt {
 
     public void run() {
         Scanner scanner = new Scanner(System.in);
-        while (true) {
+        String input = "";
+        do {
             print();
-            inputCoordinate(scanner);
-        }
+            input = inputCoordinate(scanner);
+            Points points = new Points(input);
+            double distance = points.getDistance();
+            out.println("두 점 사이 거리는 " + distance);
+        } while (!input.equals("q"));
+        scanner.close();
     }
 
-    public void inputCoordinate(Scanner scanner) {
-        String input = scanner.nextLine();
-        input.split("-");
+    public String inputCoordinate(Scanner scanner) {
+        return scanner.nextLine();
     }
 
     private void print() {
         out.println("좌표를 입력하세요.");
     }
 
-    public List<MyPoint> convertPoints(String input) {
-        String[] pointArray = input.split("-");
-        MyPoints myPoints = new MyPoints(pointArray);
-        List<MyPoint> pointList = myPoints.get();
-        return pointList;
-    }
+
 }

@@ -2,17 +2,17 @@ package coordinatecalc;
 
 import java.util.Objects;
 
-public class MyPoint {
+public class Point {
 
     private int x;
     private int y;
 
-    public MyPoint(int x, int y) {
+    public Point(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
-    public MyPoint(String input) {
+    public Point(String input) {
         String[] split = input.replaceAll("[()]", "").split(",");
         this.x = Integer.parseInt(split[0]);
         this.y = Integer.parseInt(split[1]);
@@ -29,9 +29,9 @@ public class MyPoint {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof MyPoint)) return false;
-        MyPoint myPoint = (MyPoint) o;
-        return getX() == myPoint.getX() && getY() == myPoint.getY();
+        if (!(o instanceof Point)) return false;
+        Point point = (Point) o;
+        return getX() == point.getX() && getY() == point.getY();
     }
 
     @Override
