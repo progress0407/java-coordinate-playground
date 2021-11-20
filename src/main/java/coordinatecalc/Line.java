@@ -3,6 +3,8 @@ package coordinatecalc;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.System.out;
+
 public class Line extends Shape {
 
     List<Point> points;
@@ -29,4 +31,9 @@ public class Line extends Shape {
     public List<Point> get() {
         return points;
     }
+
+    public void printProcessedValue() {
+        out.println("두 점 사이 거리는 " + getDistance());
+    }
+
 }

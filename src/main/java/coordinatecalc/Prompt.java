@@ -12,9 +12,8 @@ public class Prompt {
         do {
             print();
             input = inputCoordinate(scanner);
-            Line line = (Line) ShapeFactory.create(input);
-            double distance = line.getDistance();
-            out.println("두 점 사이 거리는 " + distance);
+            Shape shape =  ShapeFactory.create(input);
+            shape.printProcessedValue();
         } while (!input.equals("q"));
         scanner.close();
     }
