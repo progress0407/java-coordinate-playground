@@ -26,6 +26,7 @@ public class Points {
     public double getDistance() {
         Point a = points.get(0);
         Point b = points.get(1);
+
         return getDistance(a, b);
     }
 
