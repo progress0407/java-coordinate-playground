@@ -3,7 +3,7 @@ package coordinatecalc;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.awt.*;
+import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.offset;
@@ -28,4 +28,15 @@ public class CoordinateCalculatorTest {
         double distance = PolygonCalculator.getDistance(a, b);
         assertThat(distance).isEqualTo(6.403, offset(0.0009));
     }
+
+    @Test
+    @DisplayName("문자열이 두 점이 된다")
+    void 문자열이_두점() {
+        String input = "(10,10)-(14,15)";
+        // inputCoordinate
+        Prompt prompt = new Prompt();
+        List<MyPoint> pointList = prompt.convertPoints(input);
+        assertThat(pointList).containsExactly(new MyPoint(10, 10), new MyPoint(14, 15));
+    }
+
 }
