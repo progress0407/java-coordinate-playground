@@ -8,6 +8,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.offset;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class LinePointCalculatorTest {
 
@@ -45,6 +46,6 @@ public class LinePointCalculatorTest {
         String input = "(10,10)-(14,15)";
         Line line = (Line) ShapeFactory.create(input);
         double distance = line.getDistance();
-        Assertions.assertEquals(6.403, distance, 0.001);
+        assertEquals(6.403, distance, 0.001);
     }
 }

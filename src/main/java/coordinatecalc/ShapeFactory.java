@@ -7,18 +7,21 @@ public class ShapeFactory {
 
     public static Shape create(String input) {
         int dashCount = getDashCount(input);
-        String[] pointArray = input.split("-");
-        List<Point> points = createPoints(pointArray);
+        List<Point> points = createPoints(input);
         if (dashCount == 3) {
             return new Rectangle(points);
+        }
+        if (dashCount == 2) {
+            return new Triangle(points);
         }
         if (dashCount == 1) {
             return new Line(points);
         }
-        return null;
+        throw new RuntimeException("점의 갯수는 2 ~ 4개만 허용합니다.");
     }
 
-    private static List<Point> createPoints(String... pointArray) {
+    private static List<Point> createPoints(String input) {
+        String[] pointArray = input.split("-");
         List<Point> points = new ArrayList<>();
         for (String point : pointArray) {
             points.add(new Point(point));
