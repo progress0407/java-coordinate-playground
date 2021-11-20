@@ -12,7 +12,7 @@ public class Prompt {
         do {
             print();
             input = inputCoordinate(scanner);
-            Points points = new Points(input);
+            Points points = Points.create(input);
             double distance = points.getDistance();
             out.println("두 점 사이 거리는 " + distance);
         } while (!input.equals("q"));
