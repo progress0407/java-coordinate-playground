@@ -13,7 +13,7 @@ public class SquarePointCalculatorTest {
     @DisplayName("점 4개를 입력 받는다: 정상")
     void 점입력_정상() {
         String input = "(10,10)-(22,10)-(22,18)-(10,18)";
-        Rectangle rectangle = ShapeFactory.create(input);
+        Rectangle rectangle = (Rectangle) ShapeFactory.create(input);
         List<Point> pointList = rectangle.get();
         assertThat(pointList).containsExactly(
                 new Point(10, 10),

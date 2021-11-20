@@ -3,24 +3,12 @@ package coordinatecalc;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Points {
+public class Line extends Shape {
+
     List<Point> points;
 
-    // (10,10)-(14,15)
-    public static Points create(String input) {
-        return new Points(input.split("-"));
-    }
-
-    // {(10,10), (14,15)}
-    private Points(String... pointArray) {
-        points = new ArrayList<>();
-        for (String point : pointArray) {
-            points.add(new Point(point));
-        }
-    }
-
-    public List<Point> get() {
-        return points;
+    public Line(List<Point> points) {
+        this.points = points;
     }
 
     public double getDistance() {
@@ -35,5 +23,10 @@ public class Points {
         int yDifference = a.getY() - b.getY();
 
         return Math.sqrt(Math.pow(xDifference, 2) + Math.pow(yDifference, 2));
+    }
+
+    @Override
+    public List<Point> get() {
+        return points;
     }
 }

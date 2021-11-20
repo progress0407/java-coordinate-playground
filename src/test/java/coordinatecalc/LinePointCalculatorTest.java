@@ -26,7 +26,7 @@ public class LinePointCalculatorTest {
     void 거리계산() {
         Point a = new Point(10, 10);
         Point b = new Point(14, 15);
-        double distance = Points.getDistance(a, b);
+        double distance = Line.getDistance(a, b);
         assertThat(distance).isEqualTo(6.403, offset(0.0009));
     }
 
@@ -34,8 +34,8 @@ public class LinePointCalculatorTest {
     @DisplayName("문자열이 두 점이 된다")
     void 문자열이_두점() {
         String input = "(10,10)-(14,15)";
-        Points points = Points.create(input);
-        List<Point> pointList = points.get();
+        Line line = (Line) ShapeFactory.create(input);
+        List<Point> pointList = line.get();
         assertThat(pointList).containsExactly(new Point(10, 10), new Point(14, 15));
     }
 
@@ -43,8 +43,8 @@ public class LinePointCalculatorTest {
     @DisplayName("두점을 입력받아 거리를 계산한다")
     void 입력후_두점_거리계산() {
         String input = "(10,10)-(14,15)";
-        Points points = Points.create(input);
-        double distance = points.getDistance();
+        Line line = (Line) ShapeFactory.create(input);
+        double distance = line.getDistance();
         Assertions.assertEquals(6.403, distance, 0.001);
     }
 }
